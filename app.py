@@ -6,6 +6,8 @@ import os
 
 st.set_page_config(page_title="AI Resume Auth App", layout="centered")
 
+API = st.input_text("ENTER YOUR OPENAI API KEY")
+
 # LOGIN SYSTEM
 if "user" not in st.session_state:
     st.title("AI Resume Analyzer - Login System")
@@ -44,7 +46,7 @@ else:
         st.rerun()
 
     st.title("AI-Powered Resume Analyzer")
-    API = st.input_text("ENTER YOUR OPENAI API KEY")
+    
     resume_file = st.file_uploader("Upload Resume (PDF or DOCX)", type=["pdf", "docx"])
     job_description = st.text_area("Paste Job Description")
 
