@@ -1,7 +1,7 @@
 import streamlit as st
 from db import create_user, authenticate_user
 from resume_parser import extract_text_from_pdf, extract_text_from_docx
-from ai_model import analyze_resume
+from ai_model import *
 import os
 
 st.set_page_config(page_title="AI Resume Auth App", layout="centered")
