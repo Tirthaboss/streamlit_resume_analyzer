@@ -1,5 +1,5 @@
 import openai
-from .app import *
+from app import *
 openai.api_key = API
 
 def analyze_resume(text, job_description):
