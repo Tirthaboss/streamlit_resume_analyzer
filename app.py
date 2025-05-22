@@ -8,7 +8,12 @@ st.set_page_config(page_title="AI Resume Auth App", layout="centered")
 
 #api = st.input_text("ENTER YOUR OPENAI API KEY")
 
-api = st.input_text(placeholder="ENTER YOUR OPENAI API",max_chars=48)
+# Corrected line to get the OpenAI API key
+api = st.text_input(placeholder="ENTER YOUR OPENAI API", max_chars=48)
+
+# Continue with the rest of your app logic...
+
+#api = st.input_text(placeholder="ENTER YOUR OPENAI API",max_chars=48)
 
 
 # LOGIN SYSTEM
