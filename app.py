@@ -43,7 +43,84 @@ if "user" not in st.session_state:
 
     st.markdown("---")
     st.markdown("### Or Login with OAuth")
-    st.markdown("[Login with Google](https://streamlit.io)", unsafe_allow_html=True)
+    st.markdown("""
+    <style>
+    /* From Uiverse.io by mRcOol7 */ 
+button {
+  max-width: 320px;
+  display: flex;
+  overflow: hidden;
+  position: relative;
+  padding: 0.875rem 72px 0.875rem 1.75rem;
+  background-color: #4285f4;
+  color: #ffffff;
+  font-size: 15px;
+  line-height: 1.25rem;
+  font-weight: 700;
+  text-align: center;
+  text-transform: uppercase;
+  vertical-align: middle;
+  align-items: center;
+  border-radius: 0.5rem;
+  gap: 0.75rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  border: none;
+  transition: all 0.6s ease;
+  filter: brightness(1.2);
+}
+
+button .google-icon {
+  background-color: #fff;
+  display: grid;
+  position: absolute;
+  right: 0;
+  place-items: center;
+  width: 3rem;
+  height: 100%;
+  border-radius: 0.5rem 0 0 0.5rem;
+  filter: brightness(1.2);
+}
+
+button span svg {
+  width: 1.5rem;
+  height: 1.5rem;
+  filter: drop-shadow(0 0 5px rgba(66, 133, 244, 0.8));
+}
+
+button:hover {
+  box-shadow: 0 4px 30px rgba(66, 133, 244, 0.1),
+    0 2px 30px rgba(52, 168, 83, 0.06);
+  filter: brightness(1);
+}
+
+button:hover .google-icon {
+  filter: brightness(1);
+	}
+ 
+    </style>
+    <!-- From Uiverse.io by mRcOol7 --> 
+<button>
+  Sign in with Google
+  <span class="google-icon">
+    <svg viewBox="0 0 48 48">
+      <title>Google Logo</title>
+      <clipPath id="g">
+        <path
+          d="M44.5 20H24v8.5h11.8C34.7 33.9 30.1 37 24 37c-7.2 0-13-5.8-13-13s5.8-13 13-13c3.1 0 5.9 1.1 8.1 2.9l6.4-6.4C34.6 4.1 29.6 2 24 2 11.8 2 2 11.8 2 24s9.8 22 22 22c11 0 21-8 21-22 0-1.3-.2-2.7-.5-4z"
+        ></path>
+      </clipPath>
+      <g clip-path="url(#g)" class="colors">
+        <path d="M0 37V11l17 13z" fill="#FBBC05"></path>
+        <path d="M0 11l17 13 7-6.1L48 14V0H0z" fill="#EA4335"></path>
+        <path d="M0 37l30-23 7.9 1L48 0v48H0z" fill="#34A853"></path>
+        <path d="M48 48L17 24l-4-3 35-10z" fill="#4285F4"></path>
+      </g>
+    </svg>
+  </span>
+</button>
+
+    """, unsafe_allow_html=True)
     st.markdown("[Login with GitHub](https://streamlit.io)", unsafe_allow_html=True)
     st.caption("OAuth login placeholders (Streamlit Cloud doesn’t support popups or Flask server)")
 
