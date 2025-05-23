@@ -47,7 +47,50 @@ if "user" not in st.session_state:
     <!DOCTYPE html>
 <html>
 <head>
-<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+<style>
+.login-btn {
+  display: inline-flex;
+  align-items: center;
+  padding: 10px 16px;
+  font-size: 16px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-family: 'Segoe UI', sans-serif;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.login-btn img {
+  height: 22px;
+  width: 22px;
+  margin-right: 10px;
+  transition: transform 0.2s;
+}
+
+/* GitHub Style */
+.github {
+  background-color: #000;
+  color: white;
+  border: none;
+}
+
+.github:hover {
+  background-color: #222;
+  transform: scale(1.03);
+}
+
+/* Google Style */
+.google {
+  background-color: #121212;
+  color: white;
+  border: 1px solid #e0e0e0;
+}
+
+.google:hover {
+  background-color: #2b2b2b;
+  transform: scale(1.03);
+		    }
+      
+</style>
 </head>
 <body>
 <a href="#" class="flex items-center px-5 py-2 bg-black text-white rounded-lg hover:bg-gray-800 transition">
