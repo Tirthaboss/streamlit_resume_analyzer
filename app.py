@@ -6,14 +6,14 @@ import openai
 
 st.set_page_config(page_title="AI Resume Auth App", layout="centered")
 
-api = st.text_input("OpenAI API Key", placeholder="ENTER YOUR OPENAI API", max_chars=48)
+api = st.text_input(label="OpenAI API Key", placeholder="ENTER YOUR OPENAI API", max_chars=48)
 
-openai.api_key = api
+openai_api = openai.api_key = api
 
-def analyze_resume(text, job_description):
+def analyze_resume(text, job_description,openai_api):
     prompt = f"Compare this resume:\n{text}\nwith the job description:\n{job_description}\nGive improvement tips and score it out of 100."
     response = openai.ChatCompletion.create(
-        model="gpt-4",
+        model="gpt-4o",
         messages=[{"role": "user", "content": prompt}],
         max_tokens=300
     )
