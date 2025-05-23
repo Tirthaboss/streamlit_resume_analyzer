@@ -44,9 +44,6 @@ if "user" not in st.session_state:
     st.markdown("---")
     st.markdown("### Or Login with OAuth")
     st.markdown("""
-    <!DOCTYPE html>
-<html>
-<head>
 <style>
 .login-btn {
   display: inline-flex;
@@ -66,7 +63,7 @@ if "user" not in st.session_state:
   transition: transform 0.2s;
 }
 
-/* GitHub Style */
+
 .github {
   background-color: #000;
   color: white;
@@ -78,7 +75,7 @@ if "user" not in st.session_state:
   transform: scale(1.03);
 }
 
-/* Google Style */
+
 .google {
   background-color: #121212;
   color: white;
@@ -104,15 +101,11 @@ if "user" not in st.session_state:
   Sign in with Google
 </a>
 	
-</body>
-</html>
+
 
 				      
 
     """, unsafe_allow_html=True)
-    st.markdown("[Login with GitHub](https://streamlit.io)", unsafe_allow_html=True)
-    st.caption("OAuth login placeholders (Streamlit Cloud doesn’t support popups or Flask server)")
-
 else:
     # LOGGED-IN VIEW
     st.sidebar.success(f"Logged in as: {st.session_state['user']}")
