@@ -1,9 +1,10 @@
 from pymongo import MongoClient
 import bcrypt
 import os
+import streamlit as st
 from dotenv import load_dotenv
 load_dotenv()
-MONGO_URL = os.environ.get("MONGO_URL")  # Use secrets in Streamlit Cloud
+MONGO_URL = st.secret("MONGO_URL")  # Use secrets in Streamlit Cloud
 
 client = MongoClient(MONGO_URL)
 db = client["resume_app"]
