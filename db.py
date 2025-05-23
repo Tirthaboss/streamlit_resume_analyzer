@@ -2,7 +2,7 @@ from pymongo import MongoClient
 import bcrypt
 import os
 import streamlit as st
-MONGO_URL = st.secrets["MONGO_URL"]  # Use secrets in Streamlit Cloud
+MONGO_URL = st.secrets["MONGO"]["MONGO_URL"]  # Use secrets in Streamlit Cloud
 
 client = MongoClient(MONGO_URL)
 db = client["resume_app"]
