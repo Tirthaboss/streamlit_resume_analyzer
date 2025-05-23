@@ -1,22 +1,23 @@
 import streamlit as st
 from db import create_user, authenticate_user
 from resume_parser import extract_text_from_pdf, extract_text_from_docx
-from ai_model import *
 import os
+import openai
 
 st.set_page_config(page_title="AI Resume Auth App", layout="centered")
 
-#api = st.input_text("ENTER YOUR OPENAI API KEY")
+api = st.text_input("OPENAI API KEY",placeholder="ENTER YOUR OPENAI API", max_chars=48)
 
-# Corrected line to get the OpenAI API key
-api = st.text_input(placeholder="ENTER YOUR OPENAI API", max_chars=48)
+openai.api_key = api
 
-# Continue with the rest of your app logic...
-
-#api = st.input_text(placeholder="ENTER YOUR OPENAI API",max_chars=48)
-
-
-# LOGIN SYSTEM
+def analyze_resume(text, job_description):
+    prompt = f"Compare this resume:\n{text}\nwith the job description:\n{job_description}\nGive improvement tips and score it out of 100."
+    response = openai.ChatCompletion.create(
+        model="gpt-4",
+        messages=[{"role": "user", "content": prompt}],
+        max_tokens=300
+    )
+    return response.choices[0].message.content
 if "user" not in st.session_state:
     st.title("AI Resume Analyzer - Login System")
     choice = st.selectbox("Login or Signup", ["Login", "Signup"])
