@@ -50,13 +50,12 @@ if "user" not in st.session_state:
 <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
 <body>
-<!-- GitHub Button -->
 <a href="#" class="flex items-center px-5 py-2 bg-black text-white rounded-lg hover:bg-gray-800 transition">
   <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" class="w-5 h-5 mr-3" alt="GitHub logo">
   Sign in with GitHub
 </a>
 
-<!-- Google Button -->
+
 <a href="#" class="flex items-center px-5 py-2 bg-neutral-900 text-white rounded-full border border-gray-300 hover:bg-neutral-800 transition">
   <img src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg" class="w-5 h-5 mr-3" alt="Google logo">
   Sign in with Google
